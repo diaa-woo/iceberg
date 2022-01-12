@@ -33,3 +33,21 @@ body: Padding(
 ```
 
 <p>mainAxisAlignment: 위젯들을 세로로 나열해줌(Column과의 차이: Column은 단순히 세로로만 나열해주기만 하고, 이 위젯은 앱 스트림 내에 상,중,하단으로 구분하여 정렬해줌)</p>
+
+```Dart
+mainAxisAlignment: MainAxisAlignment.center,  //축 내에서 중단으로 이동해줌
+```
+
+## Text
+<p>앱 화면에 텍스트를 띄워주는 위젯으로 다양한 위젯들을 포함시킬 수 있다.</p>
+<p>TextStyle: 텍스트 위젯에 사용되는 위젯으로, 텍스트의 크기와 색상, 즉 스타일을 지정해준다.</p>
+
+```Dart
+Text('NAME',
+    style: TextStyle(
+        color: Colors.white,  //텍스트 색상
+        letterSpacing: 2.0,  //철자 간의 간격
+        ...
+    )
+)
+```
