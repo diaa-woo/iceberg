@@ -22,7 +22,7 @@
 
 ### 저급 언어와 고급 언어
 
-<p>현재 시점으로 돌아와서, 지금까지 나와있는 언어들을 우리는 두가지의 형태로 분리할 수 있다. 바로 <b>저급 언어(Low-Level Language)</b>와 <b>고급 언어(High-Level Language)</b>이다. 저급 언어의 종류로는 대표적으로 기계어(machine language)와 어셈블리어(Assembler)가 있고 고급 언어의 종류로는 C(얘는 가끔 저급 언어에 속하기도 하여 중간 언어(Middle-Level Language)라고도 불리기도 한다.), JAVA, Python 등이 존재한다.</p>
+<p>현재 시점으로 돌아와서, 지금까지 나와있는 언어들을 우리는 두가지의 형태로 분리할 수 있다. 바로 <b>저급 언어(Low-Level Language)</b>와 <b>고급 언어(High-Level Language)</b>이다. 저급 언어의 종류로는 대표적으로 기계어(machine language)와 어셈블리어(Assembler)가 있고 고급 언어의 종류로는 C(얘는 가끔 저급 언어에 속하기도 하며, 중급언어(Middle-Level Language)라고도 불리기도 한다.), JAVA, Python 등이 존재한다.</p>
 
 <p>이 둘의 가장 큰 차이점으로는, 바로 가독성이다. 아래 코드들은 'Hello, World!'를 출력해주는 코드이다.</p>
 <p></p>
