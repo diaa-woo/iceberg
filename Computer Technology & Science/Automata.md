@@ -43,11 +43,42 @@ $\displaystyle\sum_{}^{}={(a,b,c,d, ... , z)} : abcd, galaxy, helloworld$
 
 $\displaystyle\sum_{}^{}={(0,1)} : 001, 1110$
 
-<p>위의 두 문자열, 001, 1110과 마찬가지로 오직 0과 1로만 이루어진 유한한 알파벳들의 연속이다.</p>
-<p>또한, 문자열은 비어있을 수 있다. 이렇게 빈 문자열은 <b>앱실롱(epsilon)</b>으로 표기한다.
+<p> 위의 두 문자열, 001, 1110과 마찬가지로 오직 0과 1로만 이루어진 유한한 알파벳들의 연속이다.</p>
+<p> 또한, 문자열은 비어있을 수 있다. 이렇게 빈 문자열은 <b>앱실롱(epsilon)</b>으로 표기한다.(마치 공역 같은)</p>
 
-$\epsilon$
+> $\epsilon : epsilon$ (비어있는 문자열)
 
+<p> 문자열은, 시그마의 제곱수(Powers of an alphabet)와 밀접한 관련이 있다.</p>
+
+$\displaystyle\sum_{}^{}k{}$
+
+<p> 시그마의 k제곱은, 그 알파벳에서 가능한, 길이가 k인 문자열들의 집합이다. 이 알파벳으로 예시를 들자면,</p>
+
+$\displaystyle\sum_{}^{}1={0,1}$
+
+<p> 0과 1이라는 심볼로 만들 수 있는, 길이가 1인 문자열은 0과 1밖에 없다.</p>
+
+$\displaystyle\sum_{}^{}2={00, 01, 10, 11}$
+
+<p> 마찬가지로 0과 1로 만들 수 있는, 길이가 2인 문자열은 4가지이다. </p>
+
+$\displaystyle\sum_{}^{}0={\epsilon}$
+
+<p> 참고로, 시그마의 0제곱은 빈 문자열인 앱실롱(epsilon)이다. 추가로, <b>클레이니 스타(Kleene Star)</b>에 대해 알아보자. 다음 단계인 언어를 이해하기 위해 필요한 개념이다. 클레이니 스타를 풀어내자면, <b>특정 알파벳으로 만들 수 있는 모든 문자열의 집합이다.</b>심볼이 a,b 두가지로 이루어진 예제를 보자면,</p>
+
+$\displaystyle\sum_{}^{}={a,b}$
+
+<p> 클레이니 스타를 편의상 <b>시그마 스타</b>라고 부르기도 한다. 위의 알파벳의 시그마 스타는 다음과 같다.</p>
+
+$\sum_{}^{*}={\{a,b\}}^*=\{\epsilon,a,b,aa,ab,ba,bb,aaa,aab,aba,abb,baa,bab,bba,bbb,...\}$
+
+<p>이렇게, a와 b로 만들 수 있는 모든 문자열 조합은 무한하다. 그 모든 문자열의 집합을 시그마 스타라고 부른다. 또한, <b>클레이니 플러스</b>라는 개념도 있다. 그러나 단순히 클레이니 스타에서 빈 문자열(epsilon)을 제외한 집합이다.</p>
+
+$\sum_{}^{*}+={\{a,b\}}^+=\{a,b,aa,ab,ba,bb,aaa,aab,aba,abb,baa,bab,bba,bbb,...\}$
+
+<p> 시그마 스타의 정의는 다음과 같다.
+
+$\displaystyle\sum_{}^{}*= \displaystyle\sum_{}^{}0 \cup \displaystyle\sum_{}^{}1 \cup \displaystyle\sum_{}^{}2 \cup \displaystyle\sum_{}^{}3 \cup ... = $
 
 ## 출처
 https://blog.naver.com/PostView.naver?blogId=bestowing&logNo=221636494349&parentCategoryNo=&categoryNo=32&viewDate=&isShowPopularPosts=false&from=postView
