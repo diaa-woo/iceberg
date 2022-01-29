@@ -76,9 +76,45 @@ $\sum_{}^{*}={\{a,b\}}^*=\{\epsilon,a,b,aa,ab,ba,bb,aaa,aab,aba,abb,baa,bab,bba,
 
 $\sum_{}^{*}+={\{a,b\}}^+=\{a,b,aa,ab,ba,bb,aaa,aab,aba,abb,baa,bab,bba,bbb,...\}$
 
-<p> 시그마 스타의 정의는 다음과 같다.
+<p> 시그마 스타의 정의는 다음과 같다.</p>
 
-$\displaystyle\sum_{}^{}*= \displaystyle\sum_{}^{}0 \cup \displaystyle\sum_{}^{}1 \cup \displaystyle\sum_{}^{}2 \cup \displaystyle\sum_{}^{}3 \cup ... = $
+$\displaystyle\sum_{}^{}*= \displaystyle\sum_{}^{}0 \cup \displaystyle\sum_{}^{}1 \cup \displaystyle\sum_{}^{}2 \cup \displaystyle\sum_{}^{}3 \cup ... = \displaystyle\cup_{i=0}^{\infty} \displaystyle\sum_{}^{}i$
+
+<p> 이를 간단히 첨언하면, 주어진 심볼로 만들 수 있는, 길이가 0인 모든 문자열부터 길이가 무한대인 모든 문자열까지 포함하는 집합이다.</p>
+
+<p> - <b>언어(language):</b> 특정 알파벳의 시그마 스타의 부분집합인 문자열의 집합만이 그 알파벳의 언어가 될 수 있다. 한마디로, 언어는 특정 알파벳의 시그마 스타의 부분집합이다.</p>
+
+$L\;is\;a\;language\;over\;alphabet \displaystyle\sum_{}^{},\;only\;if\;L \subseteq \sum_{}^{}*$
+
+<p> 비어있는 언어가 있을시, 다음과 같이 표기한다</p>
+
+$L = \varnothing$
+
+<p> 단, L이 앱실롱으로만 이루어진 언어라고 해도, 비어있는 언어는 아니다.</p>
+
+$if \, L_1 = \{\epsilon\}\; and\;L_2 = \varnothing\;then\,L_1 \neq L_2 $
+
+### 문자열의 연산
+
+<p> 문자열에는, 연산의 개념이 포함되어 있다. 먼저, 문자열의 길이는 다음과 같이 나타낸다.</p>
+
+$ \vert abcd \vert$
+
+<p> 이렇듯 abcd라는 문자열의 길이는 저렇게 표기한다. 참고로 epsilon은 빈 문자열을 뜻하므로,<p>
+
+$ \vert \epsilon \vert = 0$
+
+<p> 두 개의 문자열을 합하는(concatenate) 연산도 가능하다. 두 문자열 사이에 하나를 붙이거나, 두 문자열을 연속으로 적어서 표기한다.(일반 사칙연산과 동일하다.)</p>
+
+$Let\;a = hello,\;b = world, \; then \; ab = a\cdot b = helloworld$
+
+<p> 참고로, 어떠한 문자열이든, 앞뒤로 빈 문자열을 포함하고 있다고 말할 수 있다. 즉, 위의 문자열 a에서,<p>
+
+$hello = \epsilon hello = hello\epsilon = \epsilon hello \epsilon$
+
+<p> 4가지 문자열은 모두 같다고 취급한다.</p>
+
+
 
 ## 출처
 https://blog.naver.com/PostView.naver?blogId=bestowing&logNo=221636494349&parentCategoryNo=&categoryNo=32&viewDate=&isShowPopularPosts=false&from=postView
