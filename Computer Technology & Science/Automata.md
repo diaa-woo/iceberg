@@ -130,14 +130,23 @@ $hello = \epsilon hello = hello\epsilon = \epsilon hello \epsilon$
 
 <p><b>Union: </b>합집합의 개념과 유사하다.</p>
 
-$$$$ 
+$ L_1 \cup L_2 = \{u\;\vert\;u\in L_1\;or\;u\in L_2\}$ 
 
 <p><b>Intersection: </b>교집합의 개념과 유사하다.</p>
+
+$ L_1 \cap L_2 = \{u\;\vert\;u\in L_1\;and\;u\in L_2\}$ 
+
 <p><b>Complementation: </b>여집합의 개념과 유사하다.</p>
+
+$ L' = \sum_{}^{*} - \;L = \{u\;\vert\;u\notin L\}$ 
+
 <p><b>Concatenation: </b>두 집합의 원소들을 서로 곱한 값들이다.</p>
+
+$ L_1 \cdot L_2 = \{uv\;\vert\;u\in L_1\;and\;v\in L_2\}$ 
+
 <p><b>Reversal: </b>기존 언어의 모든 문자열을 revalsal 처리한 값이다..</p>
 
-
+$ L^R = \{u^R\;\vert\;u\in L\}$ 
 
 ## 출처
 https://blog.naver.com/PostView.naver?blogId=bestowing&logNo=221636494349&parentCategoryNo=&categoryNo=32&viewDate=&isShowPopularPosts=false&from=postView
