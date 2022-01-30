@@ -98,7 +98,7 @@ $if \, L_1 = \{\epsilon\}\; and\;L_2 = \varnothing\;then\,L_1 \neq L_2 $
 
 <p> 문자열에는, 연산의 개념이 포함되어 있다. 먼저, 문자열의 길이는 다음과 같이 나타낸다.</p>
 
-$ \vert abcd \vert$
+$$ \vert abcd \vert$$
 
 <p> 이렇듯 abcd라는 문자열의 길이는 저렇게 표기한다. 참고로 epsilon은 빈 문자열을 뜻하므로,<p>
 
@@ -113,6 +113,29 @@ $Let\;a = hello,\;b = world, \; then \; ab = a\cdot b = helloworld$
 $hello = \epsilon hello = hello\epsilon = \epsilon hello \epsilon$
 
 <p> 4가지 문자열은 모두 같다고 취급한다.</p>
+
+<p> 문자열에 대해 알아둬야 할 개념이 있다. </p>
+<ul>
+    <li>prefix: 접두사</li>
+    <li>suffix: 접미사</li>
+    <li>substring: 특정 문자열의 일부분</li>
+    <li>reversal: 뒤집은 문장</li>
+    <li>palindrome: 문자열을 reversal 해도 같은 문장(다른 말로 회문이라고도 함)</li>
+</ul>
+<p> 예시로, 문자열 xyz가 있다고 할 때, z=xy를 만족하면 x는 z의 접두사가 되는 거고, y는 접미사가 되는 거다. 그리고 x,y 모두 z의 substring이 된다.</p>
+
+### 언어(Language)의 연산
+
+<p>언어는 집합의 개념과 동일하다.</p>
+
+<p><b>Union: </b>합집합의 개념과 유사하다.</p>
+
+$$$$ 
+
+<p><b>Intersection: </b>교집합의 개념과 유사하다.</p>
+<p><b>Complementation: </b>여집합의 개념과 유사하다.</p>
+<p><b>Concatenation: </b>두 집합의 원소들을 서로 곱한 값들이다.</p>
+<p><b>Reversal: </b>기존 언어의 모든 문자열을 revalsal 처리한 값이다..</p>
 
 
 
