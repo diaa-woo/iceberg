@@ -150,9 +150,8 @@ import sys  #sys라는 라이브러리를 참조해준다.
 
 ### 구문 분석
 
-<p> 전단부의 두 번째 단계인 <b>구문 분석기(Syntax Analyzer)</b>는 <b>파서(Parser)</b>라고도 불리며, 스캐너에서 출력된 토큰을 입력받아 코드의 구조를 나타내는 트리를 생성하는 프로그램. 나타낼 수 있는 트리의 종류에는 파스 트리(Parse Tree)와 추상 구문 트리(Abstract Syntax Tree)가 있다.</p>
+<p> 전단부의 두 번째 단계인 <b>구문 분석기(Syntax Analyzer)</b>는 <b>파서(Parser)</b>라고도 불리며, 스캐너에서 출력된 토큰을 입력받아 코드의 구조를 나타내는 트리를 생성하는 프로그램. 나타낼 수 있는 트리의 종류에는 파스 트리(Parse Tree)와 추상 구문 트리(Abstract Syntax Tree)가 있다.(파스 트리와 추상 구문 트리에 대해서는 따로 마크다운 파일을 만들어놨다!)</p>
 
-<p>파스 트리와 추상 구문 트리</p>
 
 ## 출처
 https://wormwlrm.github.io/2021/04/18/Formal-Language-and-Compiler.html

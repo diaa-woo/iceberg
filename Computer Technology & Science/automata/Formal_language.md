@@ -1,4 +1,4 @@
-# Automata
+# Formal language
 
 ## Automata 란?
 
@@ -94,7 +94,7 @@ $L = \varnothing$
 
 $if \, L_1 = \{\epsilon\}\; and\;L_2 = \varnothing\;then\,L_1 \neq L_2 $
 
-### 문자열의 연산
+## 문자열의 연산
 
 <p> 문자열에는, 연산의 개념이 포함되어 있다. 먼저, 문자열의 길이는 다음과 같이 나타낸다.</p>
 
@@ -124,7 +124,7 @@ $hello = \epsilon hello = hello\epsilon = \epsilon hello \epsilon$
 </ul>
 <p> 예시로, 문자열 xyz가 있다고 할 때, z=xy를 만족하면 x는 z의 접두사가 되는 거고, y는 접미사가 되는 거다. 그리고 x,y 모두 z의 substring이 된다.</p>
 
-### 언어(Language)의 연산
+## 언어(Language)의 연산
 
 <p>언어는 집합의 개념과 동일하다.</p>
 
