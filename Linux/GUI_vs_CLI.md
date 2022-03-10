@@ -1,4 +1,4 @@
-# GUI(Graphic User Interface) vs CLI(Command User Interface)
+# GUI(Graphic User Interface) vs CLI(Command Line Interface)
 
 ## 왜?
 
