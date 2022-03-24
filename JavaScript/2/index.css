@@ -1,0 +1,28 @@
+body {
+    background-image: url("2560x1440-teal-blue-solid-color-background.jpg");
+    text-align: center;
+    background-size: cover;
+    font-weight: bold;
+    color: white;
+}
+
+#message-el {
+    font-style: italic;
+}
+
+h1 {
+    color: goldenrod;
+}
+
+.customButton {
+    color: #016f32;
+    width: 150px;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+    margin-bottom: 4px;
+}
+
