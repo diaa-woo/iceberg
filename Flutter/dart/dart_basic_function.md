@@ -98,3 +98,37 @@ main() {
 ```
 
 ## 익명 함수 및 람다식
+<br>
+익명함수<br>
+(매개변수명) { 표현식; };
+ex) (a,b) {a+b;};
+<br><br>
+람다식<br>
+(매개변수명) => 표현식;
+ex) (a,b) => a-b;
+
+```Dart
+int add(int a, int b) {
+    return a + b;
+}
+
+// anonymous function
+var multi = (_a, _b) {
+    return _a * _b;
+};
+
+//lambda
+//int sub(int _a, int _b) => _a - _b;
+sub(_a, _b) => _a - _b;
+
+main() {
+    int a = 10;
+    int b = 5;
+
+    print('$a + $b = ${add(a,b)}');
+    print('$a + $b = ${multi(a,b)}');
+    print('$a + $b = ${sub(a,b)}');
+}
+```
+
+
