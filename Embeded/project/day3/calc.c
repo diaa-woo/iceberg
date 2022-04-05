@@ -2,6 +2,7 @@
 #include "input.h"
 #include "output.h"
 #include "process.h"
+#include "calc_data.h"
 
 int main(void) {
     calc_data_t cp;
