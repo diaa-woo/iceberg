@@ -6,7 +6,7 @@ const player = {
         city: 'Los Angeles'
     }
 };
-console.log(player.address.city);
+console.log(player.address.city);  //비효율적...
 
 const {name, club, address: {city}} = player;
 console.log(`${name} plays for ${club}`);
