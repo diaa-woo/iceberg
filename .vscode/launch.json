@@ -12,7 +12,7 @@
             "name": "Debug-rclcpp(gdb)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceRoot}/ROS/practice/install/${input:package}/lib/${input:package}/${input:node",
+            "program": "${workspaceRoot}/ROS/practice/install/${input:package}/lib/${input:package}/${input:node}",
             "args": [],
             "preLaunchTask": "colcon: build",
             "stopAtEntry": true,
