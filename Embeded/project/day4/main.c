@@ -23,6 +23,10 @@
 			-> *start_routine는 분기시켜서 실행할 쓰레드 함수이다.(얘도 주소 참조)(void 포인터를 사용하는 이유는 포인터 함수의 크기를 모르고, 최적화에 사용된다고 함)
 			-> *arg는 위 start_routine 쓰레드 함수의 매개변수로 넘겨진다.(얘도 void 포인터 사용하는데, 이 때문에 여기에 값 입력할 때 void * 넣어줘야하는 이유인것 같다.(자세히는 모르겠음;;))
 		pthread_join: 해당 쓰레드가 종료 할때까지 대기  
+		  -> int pthread_join(pthread_t th, void **thread_return);
+		  	-> th는 기다릴 thread의 식별자
+			-> thread_return 은 thread의 리턴값. thread_return 이 NULL이 아닌 경우 해당 포인터로 쓰레드의 리턴 값을 받아올수 있다.(여기서 void 이중 포인터로 값을 받는데, 이는 저 함수 내에서도 포인터를 사용하여 값을 할당하고 역참조 시켜줘야 하기 때문이다.)
+			-> 이중 포인터에 대한 내용: https://dojang.io/mod/page/view.php?id=553
 		pthread_detach : pthread_create 를 통해 생성된 쓰레드를 떼어냄  
 		pthread_exit : 현재 실행중인 쓰레드 종료  
 		pthread_mutex_init : 뮤텍스 초기화  
@@ -35,60 +39,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <pthread.h>
-
-pthread_t threads[5];
-int done[5];
-
-void *thread_main(void *);
+#include "main.h"
 
 int main(void)
 {
-	int i;
-	int rc;
-	int status;
-	
+	int *re;
 	printf("pid=%d\n", getpid());  //해당 프로그램의 프로세스 아이디 확인
 	
-	for (i = 0; i < 5; i++)
-	{	
-		done[i] = 0;
-		pthread_create(&threads[i], NULL, &thread_main, (void *)i);
-		printf("%d, %ld\n", i, threads[i]);
-	}
-
-	for (i = 4; i >= 0; i--)
-	{
-		done[i] = 1;
-	         rc = pthread_join(threads[i], (void **)&status);
-		if (rc == 0)
-		{
-			printf("Completed join with thread %d status= %d\n",i, status);
-		}
-		else
-		{
-			printf("ERROR; return code from pthread_join() is %d, thread %d\n", rc, i);
-            return -1;
-		}
-	}
-
-	return 0;
-}
-
-void *thread_main(void *arg)
-{
-	int i;
-	double result=0.0;
-
-	printf("therad: %d, %d\n", (int)arg, getpid());
-
-	while (!done[(int)arg])
-	{
-	   for (i=0; i < 1000000; i++)
-   	   {
-     	      result = result + (double)random();
-   	   }
-   	   printf("thread: %d, result = %e\n", (int)arg, result);
-	}
-
-	pthread_exit((void *) 0);
+	thread_create();
+	thread_verification((void**)&re);
+	return *re;
 }
