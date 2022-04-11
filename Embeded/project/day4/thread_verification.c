@@ -3,10 +3,9 @@
 #include "main.h"
 
 void thread_verification(void** re) {
-	int i;
 	int rc;
 	int status;
-	for (i = 4; i >= 0; i--)
+	for (int i = 4; i >= 0; i--)
 	{
 		done[i] = 1;
 	    rc = pthread_join(threads[i], (void **)&status);  //이중 포인터 전달
