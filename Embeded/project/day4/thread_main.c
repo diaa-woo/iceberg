@@ -16,5 +16,5 @@ void *thread_main(void *arg)
    	   printf("thread: %d, result = %e\n", (int)arg, result);
 	}
 
-	pthread_exit((void *) 0);
+	pthread_exit((void *) 0);  //function's state value -> join func에 전달
 }
