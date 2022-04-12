@@ -1,3 +1,5 @@
 {
-    "ros.distro": "foxy"
+    "ros.distro": "foxy",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs":"active"
 }
