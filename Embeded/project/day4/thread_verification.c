@@ -12,13 +12,11 @@ void thread_verification(void** re) {
 		if (rc == 0)
 		{
 			printf("Completed join with thread %d status= %d\n",i, status);
-			*re = &rc;
 		}
 		else
 		{
-			rc = -1;
 			printf("ERROR; return code from pthread_join() is %d, thread %d\n", rc, i);
-            *re = &rc;
 		}
+		*re = &rc;
 	}
 }

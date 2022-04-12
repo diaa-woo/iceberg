@@ -48,5 +48,6 @@ int main(void)
 	
 	thread_create();
 	thread_verification((void**)&re);
-	return *re;
+	if(*re == 0) return 0;
+	else return -1;
 }
