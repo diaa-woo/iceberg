@@ -19,7 +19,12 @@ void out()
 
 void* gpio_pin_1(void* args) 
 {
-    while(1) {
+    int buffer = gpio_pin_1_direct_reg;
+    while(1) 
+    {
+        while(buffer == gpio_pin_1_direct_reg);
+        printf("%d", gpio_pin_1_direct_reg);
+        buffer = gpio_pin_1_direct_reg;
         if(gpio_pin_1_direct_reg) 
         {
             in();
@@ -41,9 +46,11 @@ int main()
         scanf("%d", &d);  //direction
         scanf("%d", &v);  //value
         if(d)  {  //out_value_reg
+            if(gpio_pin_1_direct_reg != 0) gpio_pin_1_direct_reg = 0;
             gpio_pin_1_out_value_reg = v;
         }
         else {  //in_value_reg
+            if(gpio_pin_1_direct_reg != 1) gpio_pin_1_direct_reg = 1;
             gpio_pin_1_in_value_reg = v;
         }
     }
