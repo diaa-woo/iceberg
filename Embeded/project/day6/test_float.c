@@ -16,7 +16,7 @@ typedef union
 int main() 
 {
 	float_t n;
-	n.f = 0.1;
+	scanf("%f", &n.f);
 	printf("%f\n", n.f);
 	printf("%d %d %d\n", n._raw.s, n._raw.e, n._raw.m);
     return 0;
