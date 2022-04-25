@@ -10,7 +10,7 @@ typedef struct RAW_DATA
 typedef union CHAR
 {
     raw_data_t _raw;
-    char ch;
+    int ch;
 }char_t;
 
 void bin_show(char_t val)
@@ -50,13 +50,10 @@ void bin_show(char_t val)
         val._raw.d0);
 }
 
-int main() 
+void change_int(int num) 
 {
     char_t n;
-    scanf("%d", &n.ch);
-
-    printf("%d\n", n.ch);
+    n.ch = num;
     bin_show(n);
-	
-    return 0;
+    return;
 }
