@@ -14,11 +14,9 @@ static uint8_t screen[SCREEN_SIZE];
 
 void display(uint8_t *data)
 {
-    for(int y = 0; y<HEIGHT; y++) {
-        for(int x = 0; x<WIDTH; x++) {
-            printf("%c ", data[y * WIDTH + x]);
-        }
-        printf("\n");
+    for(int y = 0; y<SCREEN_SIZE; y++) {
+        printf("%c ", data[y]);
+        if((y+1) % WIDTH == 0) printf("\n");
     }
 }
 
