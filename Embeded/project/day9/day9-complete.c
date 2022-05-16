@@ -27,8 +27,7 @@ void init_random(void)
 
 void reset_num(void)
 {
-    mem = mem << 24;
-    mem = mem >> 24;
+    mem &= 0x00000FFF;
     return;
 }
 
@@ -44,22 +43,19 @@ void input_num(void)
 void process(void) {  //줄이기
     for(int i=0;i<3;i++) {
         for(int j=3;j<6;j++) {
-            printf("%d %d\n",i,j);
             if(i==j-3) {
                 if(get_nibble(mem, i) == get_nibble(mem, j)) {
-                    set_nibble(mem, 6, (get_nibble(mem, 6)+0x01));
-                    printf("strike! %d\n", get_nibble(mem,6));
+                    set_nibble(mem, 6, (get_nibble(mem, 6)+1));
                 }
             }
             else {
                 if(get_nibble(mem, i) == get_nibble(mem, j)) {
-                    set_nibble(mem, 7, (get_nibble(mem, 7)+0x01));
-                    printf("ball %d\n", get_nibble(mem,7));
+                    set_nibble(mem, 7, (get_nibble(mem, 7)+1));
                 }
             }
         }
     }
-    return;  
+    return;
 }
 
 
@@ -68,20 +64,47 @@ void display_mem(void)
     for(int i = 0; i < 6; ++i) {
         printf("%d ", get_nibble(mem, i));
     }
-    printf("\ns: %d b: %d\n", get_nibble(mem, 6), get_nibble(mem, 7));
+    printf("\n%d\n", get_nibble(mem,6));
+    switch(get_nibble(mem, 6)) {
+        case 0:
+            printf("s: 0 ");
+            break;
+        case 1:
+            printf("s: 1 ");
+            break;
+        case 3:
+            printf("s: 2 ");
+            break;
+        case 7:
+            printf("s: 3 ");
+            break;
+    }
+    switch(get_nibble(mem, 7)) {
+        case 0:
+            printf("b: 0\n");
+            break;
+        case 1:
+            printf("b: 1\n");
+            break;
+        case 3:
+            printf("b: 2\n");
+            break;
+        case 7:
+            printf("b: 3\n");
+            break;
+    }
     return;
 }
 
 int main()
-{    
-    int i =0;
+{
     init_random();
     do {
         reset_num();
         input_num();
         process();
         display_mem();
-    }while(get_nibble(mem, 6)!=3);
+    }while(get_nibble(mem, 6)!=7);
     return 0;
 }
 
