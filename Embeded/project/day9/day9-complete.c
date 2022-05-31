@@ -4,7 +4,7 @@
 #include <time.h>
 #include <stdint.h>
 
-uint32_t mem = 0;  //ì´ê±° í•˜ë‚˜ë§Œ ê°€ì§€ê³  ì–´ë–»ê²Œ ì•¼ì•„êµ¬ ê²œì„ ë§Œë“¤ ìˆ˜ ìˆì„ê¹Œ....ã… 
+uint32_t mem = 0;  //ÀÌ°Å ÇÏ³ª¸¸ °¡Áö°í ¾î¶»°Ô ¾ß¾Æ±¸ °×À» ¸¸µé ¼ö ÀÖÀ»±î....¤Ğ
 
 #define set_nibble(mem, index, value) (mem |= (value) << ((index) * 4)) 
 #define get_nibble(mem, index) ((mem >> (index * 4)) & 0xF)
@@ -28,7 +28,6 @@ void init_random(void)
 void reset_num(void)
 {
     mem &= 0x00000FFF;
-    return;
 }
 
 void input_num(void)
@@ -40,22 +39,24 @@ void input_num(void)
     }
 }
 
-void process(void) {  //ì¤„ì´ê¸°
+void process(void) {  //ÁÙÀÌ±â
+    int8_t strike, ball;
     for(int i=0;i<3;i++) {
         for(int j=3;j<6;j++) {
             if(i==j-3) {
                 if(get_nibble(mem, i) == get_nibble(mem, j)) {
-                    set_nibble(mem, 6, (get_nibble(mem, 6)+1));
+                	strike += 0x01;
                 }
             }
             else {
                 if(get_nibble(mem, i) == get_nibble(mem, j)) {
-                    set_nibble(mem, 7, (get_nibble(mem, 7)+1));
+                	ball += 0x01;
                 }
             }
         }
     }
-    return;
+    set_nibble(mem, 6, strike);
+    set_nibble(mem, 7, ball);
 }
 
 
@@ -64,36 +65,7 @@ void display_mem(void)
     for(int i = 0; i < 6; ++i) {
         printf("%d ", get_nibble(mem, i));
     }
-    printf("\n%d\n", get_nibble(mem,6));
-    switch(get_nibble(mem, 6)) {
-        case 0:
-            printf("s: 0 ");
-            break;
-        case 1:
-            printf("s: 1 ");
-            break;
-        case 3:
-            printf("s: 2 ");
-            break;
-        case 7:
-            printf("s: 3 ");
-            break;
-    }
-    switch(get_nibble(mem, 7)) {
-        case 0:
-            printf("b: 0\n");
-            break;
-        case 1:
-            printf("b: 1\n");
-            break;
-        case 3:
-            printf("b: 2\n");
-            break;
-        case 7:
-            printf("b: 3\n");
-            break;
-    }
-    return;
+    printf("\ns: %d, b: %d\n", get_nibble(mem, 6), get_nibble(mem, 7));
 }
 
 int main()
@@ -104,7 +76,6 @@ int main()
         input_num();
         process();
         display_mem();
-    }while(get_nibble(mem, 6)!=7);
+    }while(get_nibble(mem, 6)!=3);
     return 0;
 }
-
