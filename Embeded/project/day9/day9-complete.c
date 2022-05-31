@@ -4,8 +4,7 @@
 #include <time.h>
 #include <stdint.h>
 
-uint32_t mem = 0;  //이거 하나만 가지고 어떻게 야아구 겜을 만들 수 있을까....ㅠ
-
+uint32_t mem = 0; 
 #define set_nibble(mem, index, value) (mem |= (value) << ((index) * 4)) 
 #define get_nibble(mem, index) ((mem >> (index * 4)) & 0xF)
 
@@ -39,7 +38,7 @@ void input_num(void)
     }
 }
 
-void process(void) {  //줄이기
+void process(void) {  //占쏙옙占싱깍옙
     int8_t strike, ball;
     for(int i=0;i<3;i++) {
         for(int j=3;j<6;j++) {
