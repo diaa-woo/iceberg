@@ -38,7 +38,7 @@ void input_num(void)
     }
 }
 
-void process(void) {  //���̱�
+void process(void) { 
     int8_t strike, ball;
     for(int i=0;i<3;i++) {
         for(int j=3;j<6;j++) {
