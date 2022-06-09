@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Medium';
+  src: url('../public/fonts/NotoSansKR-Medium.woff2');
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('../public/fonts/NotoSansKR-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'Regular-Hestia';
+  src: url('../public/fonts/NotoSansKR-Regular-Hestia.woff');
+}
+
+a:link {
+  color : #333333;
+  text-decoration: none;
+}
+a:visited {
+  color : #333333;
+  text-decoration: none;
+}
+
+#gnb>li {
+	float:none !important;
+	display:inline-block !important;
+}
+
+ul li {
+  list-style-type: none;
+  float: left;
+  margin-left: 20px;
+}
+
+.Header {
+  padding: 30px 25px;
+  font-family: 'Regular';
+  display: flex;
+  color: #333333;
+  size: 14px;
+  align-items: center;
+}
+
+.area_header .top_menu{
+  width: auto;
+  padding-right: 20px !important;
+}
+
+.header--input {
+  outline: none;
+  border-left-width:0; 
+  border-right-width:0; 
+  border-top-width:0; 
+  border-bottom-width: 0.5px;
+  border-bottom-color: black;
+
+}
+
+
