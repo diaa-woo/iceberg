@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/SW2148/OneDrive - 부산소프트웨어마이스터고등학교/바탕 화면/Study/Python/test_module/media/videos/trigonometric functions/1080p60/partial_movie_files/FollowingGraphCamera/2964151429_2948797156_2125703170.mp4'
+file 'file:C:/Users/SW2148/OneDrive - 부산소프트웨어마이스터고등학교/바탕 화면/Study/Python/test_module/media/videos/trigonometric functions/1080p60/partial_movie_files/FollowingGraphCamera/2880034535_2342639428_4157290620.mp4'
+file 'file:C:/Users/SW2148/OneDrive - 부산소프트웨어마이스터고등학교/바탕 화면/Study/Python/test_module/media/videos/trigonometric functions/1080p60/partial_movie_files/FollowingGraphCamera/3258561879_2243974563_2965616100.mp4'
