@@ -1,4 +1,4 @@
-# socket
+# socket(Command)
 
 __형식__
 
