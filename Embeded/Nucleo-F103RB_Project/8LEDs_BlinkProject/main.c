@@ -90,7 +90,42 @@ void allDown() {
 	htim3.Instance -> CCR4 = 0;
 }
 
-void inOrder
+void inOrder() {
+	for(int i = 0; i<1000; i+=period) {
+		htim2.Instance -> CCR1 = i;
+		HAL_Delay(10);
+	}
+	for(int i = 0; i<1000; i+=period) {
+		htim2.Instance -> CCR2 = i;
+		HAL_Delay(10);
+	}
+	for(int i = 0; i<1000; i+=period) {
+		htim3.Instance -> CCR3 = i;
+		HAL_Delay(10);
+	}
+	for(int i = 0; i<1000; i+=period) {
+		htim3.Instance -> CCR4 = i;
+		HAL_Delay(10);
+	}
+	for(int i = 0; i<1000; i+=period) {
+		htim2.Instance -> CCR3 = i;
+		HAL_Delay(10);
+	}
+	for(int i = 0; i<1000; i+=period) {
+		htim2.Instance -> CCR4 = i;
+		HAL_Delay(10);
+	}
+	for(int i = 0; i<1000; i+=period) {
+		htim3.Instance -> CCR1 = i;
+		HAL_Delay(10);
+	}
+	for(int i = 0; i<1000; i+=period) {
+		htim3.Instance -> CCR2 = i;
+		HAL_Delay(10);
+	}
+	HAL_Delay(3000);
+	allDown();
+}
 /* USER CODE END 0 */
 
 /**
@@ -141,7 +176,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  
+	  inOrder();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
