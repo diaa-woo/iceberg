@@ -127,6 +127,11 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+opencv/bin
+opencv/lib
+opencv/share
+opencv/lib64
+opencv/pyvenv.cfg
 
 # Spyder project settings
 .spyderproject
