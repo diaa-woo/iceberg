@@ -68,3 +68,7 @@ app.exec_()
 
 ![change_icon](../../pictures/decoration_window/change_icon.png)
 
+## 버튼 넣기
+
+PyQt의 QtWidgets에는 `QPushButton` 클래스가 정의되어 있다. 따라서 버튼을 생성하고 싶다면 해당 클래스의 객체만 생성하면 된다. QPushButton 클래스의 객체를 생성할 때 첫 번째 인자로 버튼에 출력될 텍스트를 입력하고 두 번째 인자로 버튼이 매치될 위젯을 적어주면 된다.
+생성 윈도우 바로 위에 올려줄거면 걍 `self` 붙여주면 된다.
