@@ -154,3 +154,164 @@ print(f"End time : {time.time() - start}s")
 `delayed` 메서드는 함수의 인수를 캡처하는 데 사용되는 Decorator이다.
 
 대규모 작업에서는 `joblib`를 활용하는 것이 효과적이다.
+
+## Exchange object between Processes
+
+각각의 프로세스 사이에서 서로의 값에 Communication이 필요할 때가 있다. 같은 코드 선상에 있어서 '저거 공유할 수 있지 않나? ㅋ' 라고 생각할 수도 있지만, multiprocessing으로 만들어진 프로세스는 같은 코드 선상이라도 엄연히 다른 메모리 공간을 차지하게 되어 서로의 자원을 함부로 선점할 수가 없다(같은 자원 선점시 오류 발생 가능성이 크기에 OS가 개거품 물고 달라들어 막음). 다만 개발을 하다보면 프로세스는 따로 만들어도 일부 자원은 공유해야 하는 경우가 있는데, Multiprocessing 라이브러리는 이를 대비해 `Queue`, `Pipe`을 만들어 두었다.
+
+### Queue
+
+Queue의 구현은 Thread와 Process를 안전하게 해준다는 게 큰 장점이고, 구조는 일반 Queue와 동일하다!
+
+```Python
+from multiprocessing import Process, Queue
+
+sentinel = -1
+
+def creator(data, q):
+    print('Creating data and putting it on the queue')
+    for item in data:
+        q.put(item)
+        
+def my_consumer(q):
+    while True:
+        data = q.get()
+        print('Data found to be processed: {}'.format(data))
+        processed = data * 2
+        print(processed)
+    
+        if data is sentinel:
+            break
+
+if __name__ == '__main__':
+    q = Queue()
+    data = [5, 10, 13, -1]
+    process_one = Process(target=creator, args=(data, q))
+    process_two = Process(target=my_consumer, args=(q,))
+    process_one.start()
+    process_two.start()
+    
+    q.close()
+    q.join_thread()
+    
+    process_one.join()
+    process_two.join()
+```
+
+![Queue_Result](../../image/Multiprocessing/Queue.png)
+
+데이터를 하나 생성함과 동시에 추출하여 출력하는 병렬 프로그램을 예시로 들 수 있다.
+
+### Pipe
+
+`Pipe()` 함수는 파이프로 연결된 한 쌍의 연결 객체를 돌리며 기본적으로 **양방향(Duplex)**이다. `Pipe()`가 반환하는 두 개의 연결 객체는 파이프릐 두 끝을 나타내며, 각 연결 객체에는 *send()*, *rect()* 메서드 등이 있다. 두 개 이상의 프로세스(or Thread)는 파이프의 동일한 종료 지점을 읽거나 쓰려고 하면 파이프의 데이터가 손상될 수 있다. 
+
+```Python
+from multiprocessing import Process, Pipe
+
+def f(conn):
+    conn.send([42, None, 'Hello'])
+    conn.close()
+    
+if __name__ == '__main__':
+    parent_conn, child_conn = Pipe()
+    p = Process(target=f, args= (child_conn,))
+    p.start()
+    print(parent_conn.recv())
+    p.join()
+```
+
+![Pipe_Picture](../../image/Multiprocessing/Pipe.png)
+
+## Synchronization between Processes
+
+`Multiprocessing`은 `Threading`에 있는 모든 동기화 프리미티브의 등가물을 포함한다. 예를 들어 한 번에 하나의 프로세스만 표준 출력으로 인쇄하도록 Lock을 사용해줄 수 있다.
+
+```Python
+from multiprocessing import Process, Lock
+
+def f(l, i):
+    l.acquire()
+    try:
+        print('Hello World!', i)
+    finally:
+        l.release()
+
+if __name__ == '__main__':
+    lock = Lock()
+    num2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    
+    for num in range(10):
+        Process(target=f, args=(lock, num)).start()
+        Process(target=f, args=(lock, num2[num])).start()
+```
+
+Lock을 사용하지 않으면 다른 프로세스의 출력들이 모두 섞일 수 있다.
+
+## Share state between Processes
+
+동시성 프로그래밍을 할 때 보통 가능한 한 공유된 상태를 사용하지 않는 것이 최선이다. 특히 여러 프로세스를 사용할 때는 더더욱 쓰지 않는 게 좋다.
+
+허나 정말로 공유 데이터를 사용해야 할 때 해당 라이브러리는 몇가지 기능들을 제공해준다.
+
+### Shared Memory
+데이터는 `Value` or `Array`를 사용하여 공유 메모리 맵에 저장될 수 있다.
+
+```Python
+from multiprocessing import Process, Value, Array
+
+def f(n, a):
+    n.value = 3.1415927
+    for i in range(len(a)):
+        a[i] = -a[i]
+        
+if __name__ == "__main__":
+    num = Value('d', 0.0)
+    arr = Array('i', range(10))
+    
+    p = Process(target=f, args=(num, arr))
+    p.start()
+    p.join()
+    
+    print(num.value)
+    print(arr[:])
+```
+
+![Shared_Memory](../../image/Multiprocessing/Shared_Memory.png)
+
+`num`과 `arr`을 만들 때 사용되는 `d`와 `i` 인자는 array 모듈에서 사용되는 종류의 타입 코드이다. `d`는 배정밀도 부동 소수점을 나타내고, `i`는 부호있는 정수를 나타낸다. 이러한 공유 객체는 프로세스 및 스레드에 안전하다.
+
+참고로, 공유 메모리를 더 유연하게 사용하려면 공유 메모리에 할당된 임의의 ctypes 객체 생성을 지원하는 `multiprocessing.sharedtypes`모듈을 사용할 수 있다.
+
+### Server Process
+
+`Manager()`가 반환한 관리자 객체는 파이썬 객체를 유지하고 다른 프로세스가 프락시를 사용하여 이 객체를 조작할 수 있게 하는 서버 프로세스를 제어.
+
+`Manager()`가 반환한 관리자는 `list`,`dict`,`Namespace`,`Lock`,`RLock`,`Semaphore`,`BoundedSemaphore`,`Condition`,`Event`,`Barrier`,`Array`,`Queue`,`Value` 지원
+
+```Python
+from multiprocessing import Process, Manager
+
+def f(d, l):
+    d[1] = '1'
+    d['2'] = 2
+    d[0.25] = None
+    l.reverse()
+    
+if __name__ == '__main__':
+    with Manager() as manager:
+        d = manager.dict()
+        l = manager.list(range(10))
+        
+        p = Process(target=f, args=(d, l))
+        p.start()
+        p.join()
+        
+        print(d)
+        print(l)
+```
+
+![Server_Process](../../image/Multiprocessing/Manager.png)
+
+서버 프로세스 관리자는 임의의 객체 형을 지원하도록 만들 수 있으므로 공유 메모리 객체를 사용하는 것보다 융통성이 있음. 또한 단일 관리자를 네트워크를 통해 서로 다른 컴퓨터의 프로세스에서 공유할 수 있다. 그러나 공유 메모리를 사용할 때보다 느리다.
+
