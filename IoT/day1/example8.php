@@ -11,7 +11,7 @@
 					<td>myarray[$i]</td>
 					<td>나이</td>
 				</tr>
-			"
+			";
 		}
 	?>
 </table>
