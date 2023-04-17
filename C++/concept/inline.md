@@ -15,3 +15,57 @@
 ## Inline Function이란?
 
 C++은 위 문제를 보완해주기 위해 **인라인 함수(Inline Function)**이라는 내부에서 작성된 코드의 속도와 함수의 장점을 결합하는 방법을 제공한다. `inline` 키워드는 컴파일러에서 함수를 인라인 함수로 처리하도록 요쳥하는데, 컴파일러가 코드를 컴파일하면 모든 인라인 함수가 인-플레이스(in-place) 확장된다. 즉, 함수 호출이 함수 자체의 내용 복사본으로 대체되어 함수 오버헤드가 제거된다!
+
+다만 단점은 인라인 함수가 모든 함수 호출에 대해 적절한 위치에서 확정되므로 인라인 함수가 길거나 여러 번 호출하는 경우 컴파일된 코드를 약간 더 크게 만들 수 있다
+
+정리하자면, 짧게 반복해야 하는 구문들은 인라인 함수를 쓸 시 상당한 효율을 낼 수 있다는 것이다.
+
+```C++
+#include <chrono>
+#include <iostream>
+
+using namespace std;
+using namespace chrono;
+
+int min(int x, int y) {
+    return x > y ? y : x;
+}
+
+inline int min(int x, int y, int z)  // Seperate Variable  
+{
+    return x > y ? y : x;
+}
+
+int main() {
+    cout << "General Function : ";
+    system_clock::time_point start_time = system_clock::now();
+    cout << min(5, 6);  //general
+    system_clock::time_point end_time = system_clock::now();
+    
+    microseconds mill = duration_cast<microseconds>(end_time - start_time);
+    cout << " Take time: " << mill.count() << '\n';
+
+    cout << "Inline Function : ";
+    start_time = system_clock::now();
+    cout << min(3, 2);  //inline
+    end_time = system_clock::now();
+
+    mill = duration_cast<microseconds>(end_time - start_time);
+    cout << " Take time: " << mill.count() << '\n';
+
+    return 0;
+}
+```
+
+해당 코드를 돌려보면 inline이 더 빠른 걸 알 수 있다. 좀 더 세밀하게 들여다보면 그냥 다음과 같다.
+
+```C++
+int main()
+{
+    std::cout << (5 > 6 ? 6 : 5) << '\n';
+    std::cout << (3 > 2 ? 2 : 3) << '\n';
+    return 0;
+}
+```
+
+`min()` 함수가 있던 자리에 그냥 함수에 있는 코드를 집어넣은 격이랑 똑같다.
