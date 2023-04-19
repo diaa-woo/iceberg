@@ -223,3 +223,6 @@ pubspec.lock
 
 OpenCV/code/BSSM/__MACOSX/
 OpenCV/code/BSSM/images
+
+
+node_modules
