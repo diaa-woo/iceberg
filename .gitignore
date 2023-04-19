@@ -226,3 +226,4 @@ OpenCV/code/BSSM/images
 
 
 node_modules
+*.lock
