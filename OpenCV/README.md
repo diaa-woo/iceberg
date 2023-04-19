@@ -43,4 +43,10 @@ pip3 install opencv-python
 ## 문서 바로가기
 
 [카메라 출력](concept/Call_Camera.md)
-
+[이미지 출력](concept/Call_Image.md)
+[비디오 출력](concept/Call_Video.md)
+[대칭](concept/Reverse.md)
+[회전](concept/Rotate.md)
+[확대/축소](concept/zoom.md)
+[크기 조절](concept/resize.md)
+[자르기](concept/Slice.md)
