@@ -12,6 +12,9 @@ php는 오랜 역사를 가지고 있고, 그에 따라 내장 함수 뿐만 아
 ## 하위 문서
 
 [익명 함수](concept/anonymous_function.md)
+[클래스](concept/class.md)
+[네임스페이스](concept/namespace.md)
+[오토로드](concept/autoload.md)
 
 
 출처: https://wikidocs.net/116962
