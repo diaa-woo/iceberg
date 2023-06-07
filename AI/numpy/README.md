@@ -35,3 +35,4 @@
 ## 하위 문서
 
 - [ndarray](concept/ndarray.md)
+- [배열 생성](concept/create_array.md)
