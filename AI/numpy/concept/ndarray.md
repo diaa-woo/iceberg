@@ -1,3 +1,5 @@
+[상위 문서로 이동](../README.md)
+
 # ndarray
 
 Numpy의 다차열 배열 객체
