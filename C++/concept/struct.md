@@ -1,3 +1,5 @@
+[상위 문서로 이동](../README.md)
+
 # 구조체
 
 C++에서는 고유한 사용자 정의 집계 데이터 유형(*user-defined aggergate data type*) 생성할 수 있는데, 여기서 **집계 데이터 유형(aggergate data type)**은 여러 개별 변수를 함께 그룹화하는 데이터 유형이다. 가장 단순한 집계 데이터 유형 중 하나는 **구조체(struct)**이다.
