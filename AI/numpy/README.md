@@ -36,3 +36,5 @@
 
 - [ndarray](concept/ndarray.md)
 - [배열 생성](concept/create_array.md)
+- [모양 변경](concept/reshape.md)
+- [기본 연산](concept/general_calc.md)

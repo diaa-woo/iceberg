@@ -9,6 +9,7 @@ int find(int s, int e) {
         if(S[m]>k) e=m-1;
         else s=m+1;
     }
+    
     return -1;
 }
 
@@ -17,6 +18,6 @@ int main() {
     for(int i=0; i<n; i++) {
         scanf("%d", &S[i]);
     }
-    printf("%d\n", find(0, n-1));
+    printf("%d\n", find(0, n-1)+1);
     return 0;
 }

@@ -36,7 +36,47 @@
 
 __코드__
 
+순차탐색 코드 - 무지성 탐색
+
+리스트 안에 있는 특정한 데이터를 찾기 위해 앞에서부터 데이터를 하나씩 차례대로 확인하는 방법
+
+- 정렬되지 않는 리스트에서 주로 사용
+- 시간만 많으면 원하는 원소 찾기 ㄱㄴ
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n = 0, want = 0, status = 0, k = 0;
+    scanf("%d %d", &n, &want);
+    int *arr = calloc(n, sizeof(int));
+
+    for(int i = 0; i<n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    while(k != n) {
+        if(arr[k] == want) {
+            status = 1;
+            break;
+        }
+        k++;
+    }
+
+    if(status)
+        printf("%d", k);
+    else
+        printf("Not Found");
+    return 0;
+}
+```
+
+
 이분탐색 코드 - 매우 간단함
+
+- 속도가 $log_2N$ 에 비례한다. 단계마다 탐색 범위를 2로 나누는 것과 같기 때문
+- 무조건 오름차순 정렬을 해야 한다.
 
 ```C
 #include<stdio.h>
