@@ -1,3 +1,5 @@
+[상위 문서로 이동](../README.md)
+
 # DFS
 
 **깊이 우선 탐색(Depth-First Serach)**
