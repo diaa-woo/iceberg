@@ -7,6 +7,7 @@
 [DFS](concept/DFS.md)   
 [BFS](concept/BFS.md)   
 [Search](concept/Search_algorithm.md)
+[Dynamic Programming](concept/dynamic_programming.md)
 
 Sort Part   
 [Selection Sort](concept/sort/Selection_sort.md)   
