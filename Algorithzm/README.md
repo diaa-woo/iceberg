@@ -10,3 +10,4 @@
 Sort Part   
 [Selection Sort](concept/sort/Selection_sort.md)   
 [Insertion Sort](concept/sort/Insertion_sort.md)
+[Quick Sort](concept/sort/Quick_sort.md)
