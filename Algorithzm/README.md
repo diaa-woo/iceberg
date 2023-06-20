@@ -6,3 +6,6 @@
 [Implementation](concept/Implementation.md)
 [DFS](concept/DFS.md)
 [BFS](concept/BFS.md)
+
+Sort Part
+[Insertion Sort](concept/sort/Insertion_sort.md)
