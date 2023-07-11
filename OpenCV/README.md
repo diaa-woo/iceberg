@@ -1,6 +1,6 @@
 # OpenCV 공부
 
-OpenCV는 __Open Source Computer Visible Library__의 약어로 컴퓨터 비전 라이브러라를 의미한다.
+OpenCV는 **Open Source Computer Visible Library** 의 약어로 컴퓨터 비전 라이브러리를 의미한다.
    
 실시간 이미지 프로세싱에 중점을 두었으며, Open Source Licence는 BSD 라이선스를 사용하였다.
 
@@ -42,12 +42,12 @@ pip3 install opencv-python
 
 ## 문서 바로가기
 
-[카메라 출력](concept/Call_Camera.md)
-[이미지 출력](concept/Call_Image.md)
-[비디오 출력](concept/Call_Video.md)
-[대칭](concept/Reverse.md)
-[회전](concept/Rotate.md)
-[확대/축소](concept/zoom.md)
-[크기 조절](concept/resize.md)
-[자르기](concept/Slice.md)
-[HSV](concept/HSV.md)
+[카메라 출력](concept/Call_Camera.md)   
+[이미지 출력](concept/Call_Image.md)   
+[비디오 출력](concept/Call_Video.md)   
+[대칭](concept/Reverse.md)   
+[회전](concept/Rotate.md)   
+[확대/축소](concept/zoom.md)   
+[크기 조절](concept/resize.md)   
+[자르기](concept/Slice.md)   
+[HSV](concept/HSV.md)   
