@@ -58,3 +58,23 @@ print(getattr(e, 'emp_sex', 'woman'))
 
 result:   
 ![setattr](../../image/Object/setattr.png)
+
+## 3. hasattr()
+
+- Basic Syntax : `hasattr(object, attribute_name)`
+- object에 attribute_name이 있는지 확인한다. 그러고 True or False를 출력한다.
+
+```python
+from Employee import Employee
+
+e = Employee()
+e1 = Employee()
+
+print(hasattr(e, 'emp_address'))
+setattr(e, 'emp_address', 'Korea')
+print(hasattr(e, 'emp_address'))
+print(hasattr(e1, 'emp_address'))
+```
+
+result:   
+![hasattr](../../image/Object/hasattr.png)
