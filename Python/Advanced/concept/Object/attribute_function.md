@@ -33,4 +33,28 @@ print(getattr(e, 'emp_age_other', 45))
 print(getattr(e, 'emp_age_other', e.default_age))
 ```
 
+result:   
 ![getattr](../../image/Object/getattr.png)
+
+## 2. setattr()
+
+- Basic Syntax : `setattr(object, attribute_name, value)`
+- object에 새로운 attribute를 추가하고 값은 value를 준다.
+
+Code - setattr.py
+
+```python
+from Employee import Employee
+
+e = Employee()
+
+print(getattr(e, 'emp_age'))
+setattr(e, 'emp_age', 100)
+print(getattr(e, 'emp_age', 45))
+
+setattr(e, 'emp_sex', 'man')
+print(getattr(e, 'emp_sex', 'woman'))
+```
+
+result:   
+![setattr](../../image/Object/setattr.png)
