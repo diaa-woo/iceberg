@@ -78,3 +78,32 @@ print(hasattr(e1, 'emp_address'))
 
 result:   
 ![hasattr](../../image/Object/hasattr.png)
+
+## 4. delattr()
+
+- Basic Syntax : `delattr(object, attribute_name)`
+- object 내부의 attribute_name와 같은 attribute를 삭제한다.
+
+Code - delattr.py
+
+```python
+from Employee import Employee
+
+e = Employee()
+e1 = Employee()
+
+print(hasattr(e, 'emp_comp'))     
+print(hasattr(e1, 'emp_comp'))      
+delattr(Employee, 'emp_comp')    
+print(hasattr(e, 'emp_comp'))     
+print(hasattr(e1, 'emp_comp'))     
+
+print(hasattr(e, 'emp_age'))     
+print(hasattr(e1, 'emp_age'))     
+del Employee.emp_age                # Same = delattr(Employee, 'emp_age')
+print(hasattr(e, 'emp_age'))      
+print(hasattr(e1, 'emp_age'))     
+```
+
+result:   
+![delattr](../../image/Object/delattr.png)
