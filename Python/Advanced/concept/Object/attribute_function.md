@@ -107,3 +107,19 @@ print(hasattr(e1, 'emp_age'))
 
 result:   
 ![delattr](../../image/Object/delattr.png)
+
+
+## + dir
+
+`dir()` 명령어를 통해 해당 object의 전체 attribute를 확인할 수 있다.
+
+```python
+from Employee import Employee
+
+e = Employee()
+
+print(dir(e))
+```
+
+result:   
+![dir](../../image/Object/dir.png)
