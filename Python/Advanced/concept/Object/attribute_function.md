@@ -1,4 +1,4 @@
-# Attribure Function
+# Attribute Function
 
 딥러닝 모델의 config를 일반적으로 object의 변수로 설정하여 받아오는 경우가 많다. 큰 규모의 딥러닝 모델의 경우 여러 config를 변경하여 모델을 설정해야 한다. 이때 해당 함수들을 사용하여 코드 내부에서 config를 변경 및 확인 작업을 해줄 수 있다.
 
