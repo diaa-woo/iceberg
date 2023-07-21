@@ -4,5 +4,5 @@
 
 ## 하위 문서
 
-[개념](Advanced/README.md)   
-[flask](flask/README.md)   
+[개념](concept/Advanced/README.md)   
+[flask](concept/flask/README.md)   
