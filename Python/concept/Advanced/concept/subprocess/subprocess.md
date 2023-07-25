@@ -79,7 +79,7 @@ with Popen(["ifconfig"], stdout=PIPE) as proc:
   - 다만 보안적인 부분이 존재해 책임은 전적으로 개발자에게 있음!
 - `timeout=`: 만료시간 제한
   - 만료시간 지날 시 자식 프로세스를 죽이며, 그 뒤 `TimeoutExpired` 예외 발생
-- `check=`: `True`로 전달시 자식 프로세스의 리턴 코드가 9ㅇ이 아니라면 `CalledProcessError` 예외를 일으킨다.
+- `check=`: `True`로 전달시 자식 프로세스의 리턴 코드가 0이 아니라면 `CalledProcessError` 예외를 일으킨다.
 - `encoding=`: 표준출력 및 표준오류의 인코딩
   - 이 값이 있으면 출력 내용은 문자열로 열린다.
 - `errors`, `text=` : 표준 오류 및 표준 출력을 텍스트 모드로 열 것인지를 결정하는 bool 값
