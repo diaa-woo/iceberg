@@ -7,13 +7,13 @@ Process
 - [subprocess](concept/subprocess/subprocess.md)
 
 Object part   
-[attribute_function](concept/Object/attribute_function.md)   
+- [attribute_function](concept/Object/attribute_function.md)   
 
 Context Manager
-[context_manger](concept/Context_Manager/Context%20Manager.md)
+- [context_manger](concept/Context_Manager/Context%20Manager.md)
 
 Property
-[property](concept/Property/property.md)
+- [property](concept/Property/property.md)
 
 IO
-[File IO](concept/IO/File_IO.md)   
+- [File IO](concept/IO/File_IO.md)   
