@@ -32,6 +32,7 @@ C++은 이전 버전과 호환이 꽤나 괜찮은 언어 중 하나이다. 따�
 # 하위 문서
 
 [namespace](concept/namespace.md)
+[reference](concept/reference.md)
 
 [inline](concept/inline.md)
 [struct](concept/struct.md)
