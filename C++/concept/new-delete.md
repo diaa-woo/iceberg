@@ -47,3 +47,35 @@ delete p;
 
 ## new로 배열 할당하기
 
+```cpp
+#include <iostream>
+
+int main() {
+    int arr_size;
+    std::cout << "array size : ";
+    std::cin >> arr_size;
+    int *list = new int[arr_size];
+    for(int i = 0; i<arr_size; i++) {
+        std::cin >> list[i];
+    }
+    for(int i = 0; i<arr_size; i++) {
+        std::cout << i << "the element of list : " << list[i] << std::endl;
+    }
+    delete[] list;
+    return 0;
+}
+```
+
+`list`에 `new`를 이용하여 크기가 `arr_size`인 `int` 배열을 생성하였다. 그리고 배열을 생성할 때에는 `[]`를 이용하여 배열의 크기를 넣어준다. 아래는 배열 생성 코드이다.
+
+```cpp
+T* pointer = new T[size];   // T는 임의의 자료형이다.
+```
+
+배열 안에 인자를 받는 방법은 기존과 똑같다.
+
+할당된 배열을 삭제해줄 때는 `delete[]`를 통해서 해체하면 된다.
+
+```cpp
+delete[] list;
+```
