@@ -37,7 +37,7 @@ C++은 이전 버전과 호환이 꽤나 괜찮은 언어 중 하나이다. 따�
  
 [inline](concept/inline.md)   
 [struct](concept/struct.md)   
-[class](concept/class.md)   
+[OOP](concept/OOP.md)   
 
 ## 유용한 예제
 
