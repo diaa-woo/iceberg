@@ -51,3 +51,9 @@ pip3 install opencv-python
 [크기 조절](concept/resize.md)   
 [자르기](concept/Slice.md)   
 [HSV](concept/HSV.md)   
+[Moments](concept/moment.md)   
+
+### 찾기
+
+[좌표 찾기](concept/Find_coordinate.md)
+[특정 이미지 픽셀 접근](concept/)
