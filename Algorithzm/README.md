@@ -17,6 +17,7 @@
 [BFS](concept/BFS.md)   
 [Search](concept/Search_algorithm.md)   
 [Dynamic Programming](concept/dynamic_programming.md)   
+[Shortest](concept/shortest.md)
 
 ### Sort Part   
 [Selection Sort](concept/sort/Selection_sort.md)    
