@@ -2,6 +2,9 @@
 
 ## 하위 문서
 
+Array
+- [numpy's slice](concept/Array/numpy_slice.md)     |  `[:,0]`에 관하여
+
 Process
 - [multi_processing](concept/process/Multiprocessing/multiprocessing.md)
 - [subprocess](concept/process/subprocess/subprocess.md)
