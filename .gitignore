@@ -670,3 +670,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+Python/test_module/*.png
