@@ -24,6 +24,10 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 conda install -c conda-forge libstdcxx-ng
 ```
 
+## CUDA
+
+nvidia driver 설치해서 사용하는 경우, 가끔 CUDA를 설치하지 않아서 생기는 경우도 종종 생긴다. 때문에 CUDA-Toolkit을 설치하여 적용시켜주어야 한다. 자세한 내용은 Linux-Tips 참조
+
 ## 출처
 
 https://stackoverflow.com/questions/71010343/cannot-load-swrast-and-iris-drivers-in-fedora-35/72200748#72200748
