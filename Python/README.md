@@ -4,5 +4,12 @@
 
 ## 하위 문서
 
-[개념](concept/Advanced/README.md)   
-[flask](concept/flask/README.md)   
+- [개념](concept/Advanced/README.md)   
+
+### 패키지
+
+**서버**   
+- [flask](package/server/flask/README.md)   
+
+**게임**
+- [pygame](package/game/pygame/README.md)
