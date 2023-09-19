@@ -10,6 +10,7 @@ Python으로 작성 가능한 게임 등의 멀티미디어 표현을 위한 라
 
 - [Basic](concept/basic.md)
 - [event](concept/event.md)
+- [FPS](concept/fps.md)
 
 ## 출처
 https://namu.wiki/w/Pygame   
