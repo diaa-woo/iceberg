@@ -12,8 +12,6 @@ pygame의 가장 기초적인 부분들과 기본적인 기능들을 다루는 �
 pip install pygame
 ```
 
-만일 vscode를 사용하는 환경이라면 `pygame snippers`를 설치하면 좋다.
-
 ## pygame의 기본 구조
 
 pygame의 기본 구조는 대부분 아래를 따른다.
