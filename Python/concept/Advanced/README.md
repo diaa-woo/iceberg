@@ -5,6 +5,10 @@
 Array
 - [numpy's slice](concept/Array/numpy_slice.md)     |  `[:,0]`에 관하여
 
+Class
+- [Class](concept/Class/Class.md)
+- [Static Method](concept/Class/static_method.md)
+
 Process
 - [multi_processing](concept/process/Multiprocessing/multiprocessing.md)
 - [subprocess](concept/process/subprocess/subprocess.md)
