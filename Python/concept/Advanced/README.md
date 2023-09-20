@@ -8,6 +8,7 @@ Array
 Class
 - [Class](concept/Class/Class.md)
 - [Static Method](concept/Class/static_method.md)
+- [Dunder Method](concept/Class/dunder_method.md)
 
 Process
 - [multi_processing](concept/process/Multiprocessing/multiprocessing.md)
