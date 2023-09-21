@@ -17,3 +17,6 @@
 
 **CLI**
 - [argparser](package/cli/argparser.md)
+
+**GUI**
+- [PyQT](package/gui/PyQt5/README.md)
