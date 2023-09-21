@@ -27,3 +27,6 @@
 
 **IO**
 - [File IO](concept/IO/File_IO.md)   
+
+**etc**
+- [pyi](concept/etc/pyi.md)
