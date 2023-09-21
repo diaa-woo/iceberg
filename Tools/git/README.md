@@ -9,3 +9,4 @@ Git은 너무나도 유명한 버전 관리 툴이다. 예전에는 아주아주
 ## 하위 문서
 
 - Git Commit 메시지 작성법([commit_message](git_commit_message.md))
+- Git LFS([Git LFS](git_lfs.md))
