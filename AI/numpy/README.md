@@ -39,3 +39,4 @@
 - [모양 변경](concept/reshape.md)   
 - [기본 연산](concept/general_calc.md)   
 - [논리 연산](concept/logical.md)   
+- [인덱싱과 슬라이싱](concept/index_slicing.md)
