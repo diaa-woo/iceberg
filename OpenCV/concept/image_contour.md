@@ -73,5 +73,139 @@ cv2.drawContours(img, contours, -1, (0, 255, 0), 3)
 - `(0, 255, 0)`: contour선의 BGR 색상값. 여기서는 Green으로 지정.
 - `1`: contour 선의 두깨
 
+## 이미지 상의 객체들에 대한 주요 속성 도출
+
+객체들의 주요 속성
+- Aspect Ratio(종횡비; 가로 세로 비율)
+- Extent
+- Solidity
+- Equivalent Diameter
+- Orientation
+- Mask and Pixel Points
+- Mean Color/Mean Intensity
+- Extreme Points
+
+### Aspect Ratio - 종횡비
+주어진 Contour의 외접하는 직사각형(Bounding Rect)을 구한 후 이 직사각형의 폭과 높이를 이용해서 `Aspect Ratio`의 값을 구한다.
+
+$Aspect\,Ratio=\frac{Width}{Height}$
+
+```py
+x,y,w,h = cv2.boundingRect(cnt)
+aspect_ratio = float(w)/h
+```
+
+### Extent - 범위 & 넓이
+Contour의 넓이와 Contour의 외접 직사각형 넓이의 비
+
+$Extent = \frac{Object\,Area}{Bounding\,Rectangle\,Area}$
+
+```py
+area = cv2.contourArea(cnt)
+x,y,w,h = cv2.boundingRect(cnt)
+rect_area = w*h
+extent = float(area)/rect_area
+```
+
+### Solidity - 견고성
+Contour의 넓이와 이 Contour의 Convex Hull 넓이의 비
+
+$Solidity = \frac{Contour\,Area}{Convex\,Hull\,Area}$
+
+```py
+area = cv2.contourArea(cnt)
+hull = cv2.convexHull(cnt)
+hull_area = cv2.contourArea(hull)
+solidity = float(area)/hull_area
+```
+
+### Equivalent Diameter
+Contour의 넓이와 동일한 넓이를 가진 원의 지름
+
+$Equivalent\,Diameter=\sqrt{\frac{4 \times Contour\,Area}{\pi}}$
+
+```py
+area = cv2.contourArea(cnt)
+equivalent_diameter = np.sqrt(4*area/np.pi)
+```
+
+### Orientation
+객체가 향하고 있는 방향
+
+```py
+(x,y), (MajorAxis, MinorAxis), angle = cv2.fitEllipse(cnt)
+```
+
+### Mask & Pixel Points
+가끔 객체를 구성하는 모든 점들, 다시 말하면 모든 픽셀들의 좌표를 추출할 필요가 있다. 이럴 경우 `cv2.findNonZero()` 함수를 이용하는데, 아래와 같은 방법으로 활용한다.
+
+```py
+mask = np.zeros(imgray.shape, np.uint8)
+cv2.drawContours(mask, [cnt], 0, 255, -1)
+pixels = cv2.findNonZero(mask)
+```
+
+### Mean Color/Mean Intensity
+
+Contour 내의 평균 색상, Gray Scale 이미지일 경우 평균 intensity 값을 찾기 위해 `cv2.mean()` 함수를 활용하면 된다. 위 예제에서 활용된 mask를 그대로 활용한다.
+
+```py
+mean_value = cv2.mean(img, mask=mask)
+```
+
+## 예제
+
+```py
+import numpy as np
+import cv2
+
+def convex():
+      img = cv2.imread("korea.png")
+      imgray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+      ret, thr = cv2.threshold(imgray, 127, 255, 0)
+      contours, _ = cv2.findContours(thr, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+      # 한반도에 해당하는 Contour -> 가변임. 바꿔야 함.
+      cnt = contours[18]
+
+      # 무게 중심 (cx, cy)
+      mmt = cv2.moments(cnt)
+      cx = int(mmt['m10']/mmt['m00'])
+      cy = int(mmt['m01']/mmt['m00'])
+
+      x, y, w, h = cv2.boundingRect(cnt)
+      korea_rect_area = w*h
+      korea_area = cv2.contourArea(cnt)
+      hull = cv2.convexHull(cnt)
+      hull_area = cv2.contourArea(hull)
+      ellipse = cv2.fitEllipse(cnt)
+
+      aspect_ratio = w/h
+      extent = korea_area/korea_rect_area
+      solidity = korea_area/hull_area
+
+      print('Aspect Ratio: \t%.3f' % aspect_ratio)
+      print('Extent:\t%.3f' % extent)
+      print('Solidity:\t%.3f'%solidity)
+      print('Orientation:\t%.3f' % ellipse[2])
+
+      equivalent_diameter = np.sqrt(4*korea_area/np.pi)
+      korea_radius = int(equivalent_diameter/2)
+
+      cv2.circle(img, (cx, cy), 3, (0,0,255), -1)
+      cv2.circle(img, (cx, cy), korea_radius, (0,0,255), 2)
+      cv2.rectangle(img, (x,y), (x+w, y+h), (0, 255, 0), 2)
+      cv2.ellipse(img, ellipse, (50, 50, 50), 2)
+
+      cv2.imshow("Korea Features", img)
+      cv2.waitKey(0)
+      cv2.destroyAllWindows()
+
+convex()
+```
+
+참고로 옛날 자료라 그런지 코드가 제대로 동작하지는 않는다..
+
 ## 출처
 https://blog.naver.com/samsjang/220516697251

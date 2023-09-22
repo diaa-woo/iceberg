@@ -62,4 +62,4 @@ pip3 install opencv-python
 
 ### Contour
 
-- [image_contour](concept/image_contour.md)
+- [image_contour](concept/image_contour.md) - contour 소개 & 이미지 내 속성들
