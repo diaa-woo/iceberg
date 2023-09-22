@@ -52,6 +52,7 @@ pip3 install opencv-python
 [자르기](concept/Slice.md)   
 [HSV](concept/HSV.md)   
 [Moments](concept/moment.md)   
+블록 껍질([Convex Hull](concept/convex_hull.md))
 
 ### 찾기
 
