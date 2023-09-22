@@ -42,23 +42,23 @@ pip3 install opencv-python
 
 ## 문서 바로가기
 
-[카메라 출력](concept/Call_Camera.md)   
-[이미지 출력](concept/Call_Image.md)   
-[비디오 출력](concept/Call_Video.md)   
-[대칭](concept/Reverse.md)   
-[회전](concept/Rotate.md)   
-[확대/축소](concept/zoom.md)   
-[크기 조절](concept/resize.md)   
-[자르기](concept/Slice.md)   
-[HSV](concept/HSV.md)   
-[Moments](concept/moment.md)   
-블록 껍질([Convex Hull](concept/convex_hull.md))   
-직선 검출([Hough line](concept/hough_line.md))
+- [카메라 출력](concept/Call_Camera.md)   
+- [이미지 출력](concept/Call_Image.md)   
+- [비디오 출력](concept/Call_Video.md)   
+- [대칭](concept/Reverse.md)   
+- [회전](concept/Rotate.md)   
+- [확대/축소](concept/zoom.md)   
+- [크기 조절](concept/resize.md)   
+- [자르기](concept/Slice.md)   
+- [HSV](concept/HSV.md)   
+- [Moments](concept/moment.md)   
+- 블록 껍질([Convex Hull](concept/convex_hull.md))   
+- 직선 검출([Hough line](concept/hough_line.md))
 
 ### 찾기
 
-[좌표 찾기](concept/Find_coordinate.md)
-[특정 이미지 픽셀 접근](concept/)
+- [좌표 찾기](concept/Find_coordinate.md)
+- [특정 이미지 픽셀 접근](concept/)
 
 ### Contour
 
