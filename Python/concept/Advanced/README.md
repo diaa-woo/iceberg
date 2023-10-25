@@ -30,3 +30,4 @@
 
 **etc**
 - [pyi](concept/etc/pyi.md)
+- [logger](concept/logger/logger.md)
