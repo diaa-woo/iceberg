@@ -9,3 +9,9 @@
 - [데이터 프레임 이해하기](What_is_DataFrame/Understand_DataFrame.ipynb)
 - [데이터 프레임 만들기](What_is_DataFrame/Create_DataFrame.ipynb)
 - [외부 데이터 이용하기](What_is_DataFrame/Use_ExternalData.ipynb)
+
+### 5장 데이터 분석 기초! : Basic Of DataAnalyze
+
+- [데이터 파악하기](Basic_of_DataAnalyze/Seize_data.ipynb)
+- [변수명 바꾸기](Basic_of_DataAnalyze/Change_VariableName.ipynb)
+- [파생변수 만들기](Basic_of_DataAnalyze/Derived_Variable.ipynb)
